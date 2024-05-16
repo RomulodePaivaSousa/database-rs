@@ -55,3 +55,5 @@ jobs:
           sudo apt -y install postgresql-client
           echo user db ${{secrets.USER_PG}}
           echo pass db ${{secrets.PASSWORD}}
+
+          PGPASSWORD=${{secrets.PASSWORD}} psql -U ${{secrets.USER_PG}} -h database-ea.cvkei0o2ei4o.eu-central-1.rds.amazonaws.com -d db-rs -f database-rs.sql
